@@ -44,7 +44,7 @@ This builds two modules:
   increase its reference count to prevent easy unloading with `rmmod`.
 
 
-## Load `canttouchthis`:
+## Load `canttouchthis.ko`:
 
 ```sh
 sudo insmod canttouchthis.ko
@@ -62,7 +62,7 @@ sudo lsmod | grep canttouchthis
 dmesg | tail
 ```
 
-## Try to unload the module with `rmmod`:
+## Try to unload `canttouchthis.ko` with `rmmod`:
 
 ```sh
 sudo rmmod canttouchthis.ko
@@ -90,7 +90,7 @@ The first field, `ffffffffc079d000` is the `cleanup_module` address
 for `canttouchthis`. This will be different on your system, and very
 likely different each time it is loaded.
 
-## Finally, use `hammertime` to unload it:
+## Finally, use `hammertime.ko` to unload it:
 
 ```sh
 sudo insmod hammertime.ko cleanup_fn=0xffffffffc079d000
