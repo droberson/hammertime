@@ -115,16 +115,18 @@ prevents the extra step of having to unload the module after
 insmod: ERROR: could not insert module hammertime.ko: Operation canceled
 ```
 
-You can verify that it has been unloaded by having a look at `dmesg`:
+You can verify that it has ran the `cleanup_module()` function by
+having a look at `dmesg`:
 
 ```
 [48264.955022] canttouchthis: unloading
 ```
 
 NOTE: `lsmod` may still show that the module is loaded, however the
-cleanup function has been called as shown in `dmesg`. It can likely be
-removed with `rmmod` at this point, or left alone. Do whatever you
-want to do here, I'm not your dad.
+cleanup function has been called as shown in
+`dmesg`. `canttouchthis.ko` can be removed with `rmmod` at this
+point. Other modules will behave differently and may or may not be
+able to be removed. Do whatever you want to do here, I'm not your dad.
 
 ## breakitdown.ko
 
