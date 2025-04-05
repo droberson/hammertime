@@ -9,7 +9,7 @@ MODULE_VERSION("0.1");
 static int __init canttouchthis_init(void) {
 	pr_info("canttouchthis: loaded\n");
 
-	// Prevent unloading
+	/* prevent unloading by incrementing refcount */
 	if (!try_module_get(THIS_MODULE)) {
 		pr_err("canttouchthis: try_module_get failed\n");
 		return -1;
@@ -20,7 +20,7 @@ static int __init canttouchthis_init(void) {
 
 static void __exit canttouchthis_exit(void) {
 	pr_info("canttouchthis: unloading\n");
-	module_put(THIS_MODULE);
+	module_put(THIS_MODULE); /* decrement refcount */
 }
 
 module_init(canttouchthis_init);
