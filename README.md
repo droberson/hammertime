@@ -1,5 +1,7 @@
 # hammertime
 
+![hammertime](hammertime.gif)
+
 `hammertime` is a proof-of-concept LKM used to force running the
 `cleanup_module()` functions of other LKMs including those resistant
 to `rmmod` (e.g., rootkits or EDR software). This often results in
