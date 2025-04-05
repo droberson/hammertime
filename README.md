@@ -6,6 +6,11 @@ to `rmmod` (e.g., rootkits or EDR software). This often results in
 removal of hooks applied by the targeted module which tends to uncloak
 rootkits and seriously degrade the functionality of EDR.
 
+From here, both defenders and attackers can take advantage of the
+degraded state of the targeted software--removing the rootkit
+components while they are decloaked or carrying out operations with
+degraded preventions and detections.
+
 This builds on the technique outlined in https://github.com/MatheuZSecurity/UnhookingLinuxEdr
 which demonstrates how to manually invoke a LKM's `cleanup_module()`
 function using its symbol address  in `/proc/kallsyms`.
