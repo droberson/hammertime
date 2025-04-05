@@ -1,7 +1,7 @@
 KROOT ?= /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
 
-obj-m += hammertime.o canttouchthis.o
+obj-m += hammertime.o canttouchthis.o breakitdown.o
 
 allofit: modules
 
